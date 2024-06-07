@@ -85,7 +85,7 @@ const Resume = () => {
 
     const  changeContent = (el:Data,index:number) =>{
         if(index == data.length-1) {
-            setContent({title:"About Me"});
+            setContent({ title: 'About Me', content: '', boxes: [] });
             return;
         }
 
