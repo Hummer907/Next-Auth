@@ -7,6 +7,17 @@ import { useState } from "react";
 import { css,js,html,react,next,tailwind } from "../../../public/svg"
 import AboutMe from "@/components/ui/AboutMe";
 
+interface Box {
+    title: string;
+    date: string;
+    name: string;
+  }
+  
+  interface Data {
+    title: string;
+    content: string;
+    boxes: Box[] | [];
+  }
 
 const data = [
     {
@@ -72,7 +83,7 @@ const Resume = () => {
     const [content,setContent] = useState(data[0])
     
 
-    const  changeContent = (el,index) =>{
+    const  changeContent = (el:Data,index:number) =>{
         if(index == data.length-1) {
             setContent({title:"About Me"});
             return;
