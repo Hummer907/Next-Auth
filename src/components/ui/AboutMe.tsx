@@ -24,12 +24,15 @@ const AboutMe = () => {
         <p>nursultank907@gmail.com</p>
       </div>
 
+
+      <div className='flex gap-4 '>
+        <h1 className='text-gray-400'>Languages</h1>
+        <p>Russian,English,Kyrgyz,Kazah</p>
+      </div>
+
       
     </div>
 
-    <div>
-       
-    </div>
     
     
     </>

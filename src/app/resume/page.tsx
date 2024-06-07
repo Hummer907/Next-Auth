@@ -52,33 +52,7 @@ const data = [
             }
         ]
     },
-    {
-        title:"Teach Skills",
-        content:"Lorem ipsum dasjdnoasn vijdsfnoan nasiudnason",
-        boxes:[
-            { 
-                iconLink : css,
-                title:"CSS"
-            },
-            { 
-                iconLink : js,
-                title:"JS"
-            },
-            { 
-                iconLink : react, 
-                title:"REACT"
-            }
-            ,{ 
-                iconLink : next,
-                title:"NEXT JS"
-            },
-            { 
-                iconLink : tailwind,
-                title:"TAILWIND"
-            }
-
-        ]
-    },
+    
     {
         title:'About Me',
         content:"Lorem ipsum dasjdnoasn vijdsfnoan nasiudnason",
