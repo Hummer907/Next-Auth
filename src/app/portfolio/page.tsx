@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
+
 interface Project{
     id:number,
     category:string,
@@ -70,7 +71,7 @@ const Portfolio = () => {
 
   return (
     <section className="flex w-full h-3/4  flex-col">
-         <div className="w-full h-full flex ">
+         <div className="w-full h-full flex gap-5">
         <div className="w-[45%] flex flex-col h-full gap-12">
                <h1 className="text-8xl leading-none font-extrabold text-outlined text-white">{currProj.id < 10 ? "0" +currProj.id.toString() : currProj.id }</h1>
                 <div className="text-start flex flex-col gap-7">
@@ -90,9 +91,9 @@ const Portfolio = () => {
         </div>
 
         {/* Video */}
-        <div className=" w-[55%] h-full p-4">
-          <div className="w-full h-2/4 bg-green-500">
-
+        <div className=" w-[55%] h-full p-4 flex flex-col gap-20">
+          <div className="w-full h-2/4 bg-green-600">
+           
 
 
           </div>
