@@ -7,4 +7,9 @@
         @apply font-primary bg-primary text-white leading-loose;
     }
 }
+
+.video-controll svg:hover{
+
+    fill:azure;
+}
   

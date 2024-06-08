@@ -55,11 +55,22 @@ const Portfolio = () => {
 
     const [currProj,setProj] = useState<Project>(projects[0]);
 
+    const nextProject = () =>{
+        const curr = projects.findIndex(project => project.id === currProj.id);
+        const nextId = (curr + 1) % projects.length;
+        setProj(projects[nextId]);
+    }
 
+    const prevProject = () =>{
+        const curr = projects.findIndex(project => project.id === currProj.id);
+        const nextId = curr - 1 < 0 ? projects.length-1 : curr-1;
+        setProj(projects[nextId]);
+    }
 
 
   return (
-    <div className="w-full h-3/4 flex ">
+    <section className="flex w-full h-3/4  flex-col">
+         <div className="w-full h-full flex ">
         <div className="w-[45%] flex flex-col h-full gap-12">
                <h1 className="text-8xl leading-none font-extrabold text-outlined text-white">{currProj.id < 10 ? "0" +currProj.id.toString() : currProj.id }</h1>
                 <div className="text-start flex flex-col gap-7">
@@ -79,13 +90,30 @@ const Portfolio = () => {
         </div>
 
         {/* Video */}
-        <div className=" w-[55%] h-full ">
-            <iframe className="w-full h-full" src={currProj.videoLink} allowFullScreen/>
+        <div className=" w-[55%] h-full p-4">
+          <div className="w-full h-2/4 bg-green-500">
+
+
+
+          </div>
+          <div className="flex justify-end  my-5 gap-3 video-controll ">
+            <svg xmlns="http://www.w3.org/2000/svg" onClick={() => prevProject()} className="w-[50px] leftVideoArrow " viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg " onClick={() =>nextProject()} className="w-[50px]  rightVideoArrow" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+          </div>
+
         </div>
 
+        
 
 
-    </div>
+
+        </div>
+        
+
+      
+
+    </section>
+   
   )
 }
 
