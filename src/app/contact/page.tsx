@@ -38,7 +38,7 @@ const Contact = () => {
         </div>
       
 
-      <div className='w-[45%] flex flex-col  justify-center items-center'>
+      <div className='w-[45%] flex flex-col  justify-center items-centerdw'>
 
             <div className=' h-2/4 2-full  grid grid-cols-1  text-[1.3rem] '>
 
