@@ -8,17 +8,14 @@ const links =[
         name:'home',
         path:'/'
     },
-    {
-        name:'Tech Skills',
-        path:'/techskills'
-    },
+    
     {
         name:'resume',
         path:'/resume'
     },
     {
-        name:'work',
-        path:'/work'
+        name:'portfolio',
+        path:'/portfolio'
     },
     {
         name:'contact',

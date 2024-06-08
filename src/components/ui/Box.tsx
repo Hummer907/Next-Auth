@@ -8,9 +8,13 @@ import {
   } from "@/components/ui/card"
 import Image from "next/image"
 
-
-
-const Box = ({title ,time ,desc,iconLink }) => {
+interface BoxProps {
+    title: string;
+    time?: string;
+    desc: string;
+    iconLink?: string;
+  }
+  const Box: React.FC<BoxProps> = ({ title, time, desc, iconLink }) => {
   return (
     <div className={"Box  "}>
 

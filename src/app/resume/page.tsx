@@ -6,6 +6,8 @@ import { ScrollArea ,ScrollBar} from "@/components/ui/scroll-area"
 import { useState } from "react";
 import { css,js,html,react,next,tailwind } from "../../../public/svg"
 import AboutMe from "@/components/ui/AboutMe";
+import { title } from "process";
+import TeachSkills from "@/components/ui/TeachSkills";
 
 interface Box {
     title: string;
@@ -62,6 +64,13 @@ const data = [
                 date:"Summer 2023 - Winter 2023"
             }
         ]
+    },
+
+    {
+
+        title:"Teach Skills",
+        content:"Lorem ipsum dasjdnoasn vijdsfnoan nasiudnason",
+        boxes:[],
     },
     
     {
@@ -130,28 +139,21 @@ const Resume = () => {
                
             </div>
 
-
+           
            
                {
-                content.boxes == null ?
+                content.title == "About Me" ?
                     <AboutMe/>
-                :   
+                :
+                content.title == "Teach Skills" ? <TeachSkills/> :   
                 <div className=" m-auto grid grid-flow-row grid-cols-2 gap-3  ">
                     {content?.boxes?.map((box ,index)=>{
-                        return <Box key={index} title={box.title} desc={box.name} time={box.date} iconLink={box.iconLink}/>
+                        return <Box key={index} title={box.title} desc={box.name} time={box.date} />
                    })}
 
                 </div>
-                    
                 
-               
-              
-               
-               
                }
-          
-
-            
       </div>
     </div>
   )
