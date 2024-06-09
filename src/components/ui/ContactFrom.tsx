@@ -17,6 +17,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { ToastContainer, toast } from 'react-toastify';
 
 import emailjs from '@emailjs/browser'
 
@@ -37,11 +38,10 @@ const ContactForm = () => {
   });
   const formRef = useRef<HTMLFormElement | null>(null);
 
-  console.log(process.env.EMAIL_SERVICE_ID,process.env.EMAIL_TEMPLATE_ID , process.env.EMAIL_ACCOUNT_PUBLIC_KEY);
-
-
+ 
+  const notify = () => toast("Wow so easy!");
   const onSubmit = (values: FormData) => {
-    console.log(formRef);
+    
     
     
     
@@ -53,6 +53,8 @@ const ContactForm = () => {
             console.log('Check Env variables ');
             return;
         }
+        notify();
+        
   
         emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
           .then((result) => {
@@ -141,6 +143,7 @@ const ContactForm = () => {
           <Button type='submit' className='w-1/4 text-2xl border-0 p-4 rounded-xl bg-primary hover:bg-accent hover:text-black'>
             Send
           </Button>
+          <ToastContainer />
         </form>
       </Form>
     </>
