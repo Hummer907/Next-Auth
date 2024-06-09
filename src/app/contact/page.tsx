@@ -1,40 +1,34 @@
 'use client'
-
 import { Input } from '@/components/ui/input'
 import React from 'react'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+  } from "@/components/ui/form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+
+import { z } from "zod"
+import ContactFrom from '@/components/ui/ContactFrom'
+
+
+
+
 const Contact = () => {
+  
   return (
     <div className='flex w-[100%] h-3/4  justify-between  flex-row gap-6 '>
-        <div className='contact  w-[55%] h-full flex flex-col gap-10  p-10 rounded-xl bg-[#27272c]'>
+        <div className='contact  w-[55%] h-full flex flex-col gap-10  p-7 rounded-xl bg-[#27272c]'>
             <h1 className='text-5xl text-accent'>Let's work together </h1>
             <p className='text-xl '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dolorem fugit, modi error iure dolor.</p>
-            <div className='flex flex-col gap-10 flex-wrap' >
-
-                <div className='fullname flex gap-6 '>
-                    <Input type='name'  className='bg-primary text-xl p-8 text-white border-0' placeholder='Fisrtname'/>
-                    <Input type='name' className='bg-primary text-xl  p-8 text-white border-0' placeholder='Lastname'/>
-
-                </div>
-
-                <div className='fullname flex gap-6 '>
-                    <Input type='email' className='bg-primary text-xl  p-8 text-white border-0' placeholder='Email address'/>
-                    <Input type='phone' className='bg-primary text-xl  p-8 text-white border-0' placeholder='Phone number'/>
-
-                </div>
-
-                <div>
-                <Textarea placeholder="Type your message here." className='  text-xl bg-primary border-0 h-[300px]' />
-                </div>
-                <Button type='submit' className='w-1/4 text-2xl border-0 p-4 rounded-xl hover:bg-accent hover:text-black'>
-                    Send
-                </Button>
-
-            </div>
-
-
-
+            <ContactFrom/>
         </div>
       
 
